@@ -297,6 +297,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
+  render: function render() {},
+
   props: {
     'name': { type: String, required: true },
     'path': { type: String, required: true },
