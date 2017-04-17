@@ -1,9 +1,9 @@
-VTab
+V Tabs Router
 ---
 
 [![npm](https://img.shields.io/npm/v/v-tabs-router.svg)](https://www.npmjs.com/package/v-tabs-router) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-> A Vue.js Plugin
+> A vue.js mobile tabs based on vue-router Edit
 
 Installation
 ------------
