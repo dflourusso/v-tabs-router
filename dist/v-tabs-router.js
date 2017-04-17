@@ -201,47 +201,6 @@ module.exports = function normalizeComponent (
 }
 
 
-/***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */
-/***/ (function(module, exports) {
-
-/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
-module.exports = __webpack_amd_options__;
-
-/* WEBPACK VAR INJECTION */}.call(exports, {}))
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = function(originalModule) {
-	if(!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true,
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
 /***/ })
 ]);(function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -260,13 +219,13 @@ return webpackJsonpVTabsRouter([0],[
 
 
 /* styles */
-__webpack_require__(6)
+__webpack_require__(4)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(8),
+  __webpack_require__(6),
   /* template */
-  __webpack_require__(11),
+  __webpack_require__(9),
   /* scopeId */
   null,
   /* cssModules */
@@ -282,13 +241,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(5)
+__webpack_require__(3)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(9),
+  __webpack_require__(7),
   /* template */
-  __webpack_require__(10),
+  __webpack_require__(8),
   /* scopeId */
   null,
   /* cssModules */
@@ -299,68 +258,36 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 3 */,
-/* 4 */,
+/* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Tabs_vue__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Tabs_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_Tabs_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Tab_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Tab_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_Tab_vue__);
 /* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "Tabs", function() { return __WEBPACK_IMPORTED_MODULE_0_Tabs_vue___default.a; });
 /* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "Tab", function() { return __WEBPACK_IMPORTED_MODULE_1_Tab_vue___default.a; });
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 
 
 
-
-
-// const VTabsRouter = {
-//   install (vue) {
-//     vue.component('Tabs', Tabs)
-//     vue.component('Tab', Tab)
-//   }
-// }
-// if (typeof window !== 'undefined' && window.Vue) {
-//     window.Vue.use(VTabsRouter)
-// }
-// export default VTabsRouter
-
-
-function install(vue) {
-  vue.component('Tabs', __WEBPACK_IMPORTED_MODULE_0_Tabs_vue___default.a);
-  vue.component('Tab', __WEBPACK_IMPORTED_MODULE_1_Tab_vue___default.a);
-}
-
-if (window.Vue) {
-  Vue.use(install);
-} else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === "object") {
-  module.exports = install;
-} else if (typeof define === "function" && __webpack_require__(3)) {
-  define([], function () {
-    return install;
-  });
-}
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)(module)))
 
 /***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -386,7 +313,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 9 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -429,7 +356,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 10 */
+/* 8 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -454,7 +381,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 11 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -462,5 +389,5 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ })
-],[7]);
+],[5]);
 });
