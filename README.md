@@ -13,12 +13,6 @@ npm install --save v-tabs-router
 yarn add v-tabs-router
 ```
 
-![](https://github.com/dflourusso/v-tabs-router/blob/master/print.png)
-
-Reference-style:
-Usage
------
-
 ### Usage in *.vue* template (Webpack)
 
 ```html
@@ -88,3 +82,5 @@ License
 -------
 
 [MIT](http://opensource.org/licenses/MIT)
+
+![](https://github.com/dflourusso/v-tabs-router/blob/master/print.png)
