@@ -33,6 +33,7 @@ export default {
 <style lang="stylus">
 .tabs-component
   .tabs
+    z-index 999
     text-align center
     position fixed
     bottom 0
