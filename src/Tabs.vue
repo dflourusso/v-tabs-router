@@ -6,7 +6,7 @@ div.tabs-component
         i.fa.fa-2x(:class="tabIconClass(tab.icon)", v-if='tab.icon')
         span(v-else) {{ tab.label }}
   slot
-  router-view
+  router-view(style='margin-bottom: 40px;')
 </template>
 
 <script>
@@ -34,7 +34,7 @@ export default {
 .tabs-component
   .tabs
     text-align center
-    position absolute
+    position fixed
     bottom 0
     right 0
     left 0
