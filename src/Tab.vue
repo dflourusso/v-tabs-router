@@ -1,5 +1,6 @@
 <script>
 export default{
+  render () { },
   props: {
     'name': { type: String, required: true },
     'path': { type: String , required: true},
