@@ -1,0 +1,31 @@
+{
+  "name": "v-tabs-router",
+  "version": "1.0.0",
+  "description": "A tabs Vue.js Plugin",
+  "author": "Daniel Fernando Lourusso <daniel@dflourusso.com.br>",
+  "main": "dist/v-tabs-router.js",
+  "style": "dist/v-tabs-router.css",
+  "scripts": {
+    "build": "bin/build",
+    "dist": "bin/dist",
+    "release": "rm -rf dist && yarn run build && yarn run dist"
+  },
+  "dependencies": {
+    "vue": "^2.2.6"
+  },
+  "peerDependencies": {
+    "vwp": ">=0.0.33"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dflourusso/v-tabs-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dflourusso/v-tabs-router/issues"
+  },
+  "homepage": "https://github.com/dflourusso/v-tabs-router#readme",
+  "license": {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/mit-license.php"
+  }
+}
