@@ -19,9 +19,17 @@ Reference-style:
 Usage
 -----
 
-### Bundler (Webpack, Rollup)
+### Usage in *.vue* template (Webpack)
 
-```js
+```html
+<tabs>
+  <tab name="home" path="/home" icon="fa-home"></tab>
+  <tab name="list" path="/list" icon="fa-list"></tab>
+  <tab name="account" path="/account" icon="fa-user"></tab>
+  <tab name="about" path="/about" icon="fa-exclamation"></tab>
+</tabs>
+<script>
+
 // You need a specific loader for CSS files like https://github.com/webpack/css-loader
 import 'v-tabs-router/dist/v-tabs-router.css'
 
@@ -30,6 +38,7 @@ import { Tabs, Tab } from 'v-tabs-router'
 export default {
   components: { Tabs, Tab }
 }
+</script>
 ```
 
 Development
