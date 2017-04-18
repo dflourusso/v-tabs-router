@@ -302,11 +302,12 @@ exports.default = {
   props: {
     'name': { type: String, required: true },
     'path': { type: String, required: true },
-    'icon': { type: String, required: true }
+    'icon': { type: String, required: true, default: 'fa fa-2x fa-home' },
+    'label': { type: String }
   },
   created: function created() {
     var self = this;
-    var tab = { name: this.name, path: this.path, icon: this.icon };
+    var tab = { name: this.name, path: this.path, icon: this.icon, label: this.label };
     this.$parent.$data.tabs.push(tab);
   }
 };
@@ -366,16 +367,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.tabs), function(tab) {
     return _c('router-link', {
       key: tab.name,
+      staticClass: "decoration-none",
       class: _vm.gridClass(tab),
       attrs: {
         "to": tab.path
       }
     }, [_c('div', {
-      staticClass: "tab"
-    }, [(tab.icon) ? _c('i', {
-      staticClass: "fa fa-2x",
+      staticClass: "tab",
+      class: {
+        'tab-label': tab.label
+      }
+    }, [_c('i', {
       class: _vm.tabIconClass(tab.icon)
-    }) : _c('span', [_vm._v(_vm._s(tab.label))])])])
+    }), (tab.label) ? _c('span', [_vm._v(_vm._s(tab.label))]) : _vm._e()])])
   })), _vm._t("default"), _c('router-view', {
     staticStyle: {
       "margin-bottom": "40px"

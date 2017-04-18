@@ -7,11 +7,24 @@
   right: 0;
   left: 0;
 }
+.tabs-component .tabs .decoration-none {
+  text-decoration: none;
+}
 .tabs-component .tabs .tab {
+  height: 32px;
   padding: 5px;
   background-color: #e6e6e6;
   color: #5295cf;
   border-top: 2px solid transparent;
+}
+.tabs-component .tabs .tab.tab-label i {
+  display: block;
+  font-size: 85%;
+}
+.tabs-component .tabs .tab.tab-label span {
+  font-size: 60%;
+  display: inline-block;
+  white-space: nowrap;
 }
 .tabs-component .tabs .router-link-active .tab {
   color: #306b9f;
