@@ -17,10 +17,10 @@ yarn add v-tabs-router
 
 ```html
 <tabs>
-  <tab name="home" path="/home" icon="fa-home"></tab>
-  <tab name="list" path="/list" icon="fa-list"></tab>
-  <tab name="account" path="/account" icon="fa-user"></tab>
-  <tab name="about" path="/about" icon="fa-exclamation"></tab>
+  <tab name="home" path="/home" icon="fa fa-lg fa-home"></tab>
+  <tab name="list" path="/list" icon="fa fa-lg fa-list" label="Tickets"></tab>
+  <tab name="account" path="/account" icon="fa fa-lg fa-user"></tab>
+  <tab name="about" path="/about" icon="fa fa-lg fa-exclamation"></tab>
 </tabs>
 <script>
 
@@ -34,6 +34,13 @@ export default {
 }
 </script>
 ```
+
+Tab properties
+
+ - **name:** *required* - Name of the tab. Needs be unique
+ - **path:** *required* - Path to go when click
+ - **icon:** *required* - Font icon to the tab, can be *font-awesome* or another font project. For example: 'fa fa-home'
+ - **label:** *optional* - Label appears under the icon if present
 
 Development
 -----------
