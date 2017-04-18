@@ -1,10 +1,10 @@
 <template lang="pug">
 div.tabs-component
   .pure-g.tabs
-    router-link(:class='gridClass(tab)', v-for='tab in tabs', :to='tab.path', :key='tab.name')
-      .tab
-        i.fa.fa-2x(:class="tabIconClass(tab.icon)", v-if='tab.icon')
-        span(v-else) {{ tab.label }}
+    router-link.decoration-none(:class='gridClass(tab)', v-for='tab in tabs', :to='tab.path', :key='tab.name')
+      .tab(:class="{'tab-label': tab.label}")
+        i(:class="tabIconClass(tab.icon)")
+        span(v-if='tab.label') {{ tab.label }}
   slot
   router-view(style='margin-bottom: 40px;')
 </template>
@@ -39,11 +39,22 @@ export default {
     bottom 0
     right 0
     left 0
+    .decoration-none
+      text-decoration none
     .tab
+      height 32px
       padding 5px
       background-color #E6E6E6
       color #5295CF
       border-top 2px solid transparent
+      &.tab-label
+        i
+          display block
+          font-size 85%
+        span
+          font-size 60%
+          display inline-block
+          white-space nowrap
     .router-link-active
       .tab
         color #306B9F
