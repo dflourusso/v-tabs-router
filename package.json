@@ -1,6 +1,6 @@
 {
   "name": "v-tabs-router",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A tabs Vue.js Plugin",
   "author": "Daniel Fernando Lourusso <daniel@dflourusso.com.br>",
   "main": "dist/v-tabs-router.js",
