@@ -1,12 +1,7 @@
 <template lang="pug">
 div.tabs-component
-  .tabs
-    router-link.decoration-none(:style='columnWidth', v-for='tab in tabs', :to='tab.path', :key='tab.name', :exact='tab.exact')
-      .tab(:class="{'tab-label': tab.label}", :style='tabStyle')
-        .tab-content
-          i(:class="tabIconClass(tab.icon)")
-          span(v-if='tab.label') {{ tab.label }}
-  slot
+  .tabs(:style='tabsStyle')
+    slot
   router-view(style='margin-bottom: 45px;')
 </template>
 
@@ -22,29 +17,12 @@ export default {
       default: '#5295CF'
     }
   },
-  data () {
-    return {
-      tabs: []
-    }
-  },
   computed: {
-    tabStyle () {
+    tabsStyle () {
       return {
         color: this.color,
         backgroundColor: this.backgroundColor
       }
-    },
-    columnWidth () {
-      return {
-        width: `${(100/this.tabs.length).toFixed(4)}%`
-      }
-    }
-  },
-  methods: {
-    tabIconClass (icon) {
-      let tmp = {}
-      tmp[icon] = true
-      return tmp
     }
   }
 }
@@ -59,27 +37,6 @@ export default {
     bottom 0
     right 0
     left 0
-    .decoration-none
-      text-decoration none
-    .tab
-      height 40px
-      padding 5px
-      &:not(.tab-label)
-        .tab-content
-          i
-            margin-top 5px
-      &.tab-label
-        .tab-content
-          i
-            display block !important
-            font-size 1.6em
-          span
-            font-size 0.6em
-            display inline-block
-            white-space nowrap
-    .router-link-active
-      .tab
-        .tab-content
-          transition all 0.3s
-          filter invert(38%)
+    height 40px
+    padding 5px
 </style>
