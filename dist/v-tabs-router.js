@@ -225,7 +225,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(6),
   /* template */
-  null,
+  __webpack_require__(9),
   /* scopeId */
   null,
   /* cssModules */
@@ -296,20 +296,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = {
-  render: function render() {},
+//
+//
+//
+//
+//
+//
+//
+//
 
+exports.default = {
   props: {
     name: { type: String, required: true },
-    path: { type: String, required: true },
+    to: { type: Object, required: true },
     icon: { type: String, required: true, default: 'fa fa-2x fa-home' },
     label: { type: String },
     exact: { type: Boolean, default: false } //https://jsfiddle.net/8xrk1n9f/
   },
-  created: function created() {
-    var self = this;
-    var tab = { name: this.name, path: this.path, icon: this.icon, label: this.label, exact: this.exact };
-    this.$parent.$data.tabs.push(tab);
+  computed: {
+    tabIconClass: function tabIconClass() {
+      var tmp = {};
+      tmp[this.icon] = true;
+      return tmp;
+    }
   }
 };
 
@@ -330,11 +339,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
 
 exports.default = {
   props: {
@@ -347,30 +351,12 @@ exports.default = {
       default: '#5295CF'
     }
   },
-  data: function data() {
-    return {
-      tabs: []
-    };
-  },
-
   computed: {
-    tabStyle: function tabStyle() {
+    tabsStyle: function tabsStyle() {
       return {
         color: this.color,
         backgroundColor: this.backgroundColor
       };
-    },
-    columnWidth: function columnWidth() {
-      return {
-        width: (100 / this.tabs.length).toFixed(4) + '%'
-      };
-    }
-  },
-  methods: {
-    tabIconClass: function tabIconClass(icon) {
-      var tmp = {};
-      tmp[icon] = true;
-      return tmp;
     }
   }
 };
@@ -383,32 +369,39 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "tabs-component"
   }, [_c('div', {
-    staticClass: "tabs"
-  }, _vm._l((_vm.tabs), function(tab) {
-    return _c('router-link', {
-      key: tab.name,
-      staticClass: "decoration-none",
-      style: (_vm.columnWidth),
-      attrs: {
-        "to": tab.path,
-        "exact": tab.exact
-      }
-    }, [_c('div', {
-      staticClass: "tab",
-      class: {
-        'tab-label': tab.label
-      },
-      style: (_vm.tabStyle)
-    }, [_c('div', {
-      staticClass: "tab-content"
-    }, [_c('i', {
-      class: _vm.tabIconClass(tab.icon)
-    }), (tab.label) ? _c('span', [_vm._v(_vm._s(tab.label))]) : _vm._e()])])])
-  })), _vm._t("default"), _c('router-view', {
+    staticClass: "tabs",
+    style: (_vm.tabsStyle)
+  }, [_vm._t("default")], 2), _c('router-view', {
     staticStyle: {
       "margin-bottom": "45px"
     }
-  })], 2)
+  })], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "tab-component"
+  }, [_c('router-link', {
+    staticClass: "decoration-none",
+    style: ({
+      color: _vm.$parent.$props.color
+    }),
+    attrs: {
+      "to": _vm.to,
+      "exact": _vm.exact
+    }
+  }, [_c('div', {
+    staticClass: "tab-content",
+    class: {
+      'tab-label': _vm.label
+    }
+  }, [_c('i', {
+    class: _vm.tabIconClass
+  }), (_vm.label) ? _c('span', [_vm._v(_vm._s(_vm.label))]) : _vm._e()])])], 1)
 },staticRenderFns: []}
 
 /***/ })

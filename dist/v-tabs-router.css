@@ -7,27 +7,29 @@
   bottom: 0;
   right: 0;
   left: 0;
-}
-.tabs-component .tabs .decoration-none {
-  text-decoration: none;
-}
-.tabs-component .tabs .tab {
   height: 40px;
   padding: 5px;
 }
-.tabs-component .tabs .tab:not(.tab-label) .tab-content i {
+
+.tab-component {
+  width: 100%;
+}
+.tab-component .decoration-none {
+  text-decoration: none;
+}
+.tab-component .tab-content:not(.tab-label) i {
   margin-top: 5px;
 }
-.tabs-component .tabs .tab.tab-label .tab-content i {
+.tab-component .tab-content.tab-label i {
   display: block !important;
   font-size: 1.6em;
 }
-.tabs-component .tabs .tab.tab-label .tab-content span {
+.tab-component .tab-content.tab-label span {
   font-size: 0.6em;
   display: inline-block;
   white-space: nowrap;
 }
-.tabs-component .tabs .router-link-active .tab .tab-content {
+.tab-component .router-link-active .tab-content {
   transition: all 0.3s;
   filter: invert(38%);
 }
