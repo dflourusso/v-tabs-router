@@ -1,13 +1,13 @@
 <template lang="pug">
 div.tabs-component
-  .pure-g.tabs
-    router-link.decoration-none(:class='gridClass(tab)', v-for='tab in tabs', :to='tab.path', :key='tab.name', :exact='tab.exact')
+  .tabs
+    router-link.decoration-none(:style='columnWidth', v-for='tab in tabs', :to='tab.path', :key='tab.name', :exact='tab.exact')
       .tab(:class="{'tab-label': tab.label}", :style='tabStyle')
         .tab-content
           i(:class="tabIconClass(tab.icon)")
           span(v-if='tab.label') {{ tab.label }}
   slot
-  router-view(style='margin-bottom: 40px;')
+  router-view(style='margin-bottom: 45px;')
 </template>
 
 <script>
@@ -33,14 +33,14 @@ export default {
         color: this.color,
         backgroundColor: this.backgroundColor
       }
+    },
+    columnWidth () {
+      return {
+        width: `${(100/this.tabs.length).toFixed(4)}%`
+      }
     }
   },
   methods: {
-    gridClass (tab) {
-      let classes = { }
-      classes[`pure-u-1-${this.tabs.length}`] = true
-      return classes
-    },
     tabIconClass (icon) {
       let tmp = {}
       tmp[icon] = true
@@ -52,6 +52,7 @@ export default {
 <style lang="stylus">
 .tabs-component
   .tabs
+    display -webkit-flex
     z-index 999
     text-align center
     position fixed

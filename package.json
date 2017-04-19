@@ -11,7 +11,8 @@
     "release": "rm -rf dist && yarn run build && yarn run dist"
   },
   "dependencies": {
-    "vue": "^2.2.6"
+    "vue": "^2.2.6",
+    "vue-router": "^2.3.0"
   },
   "peerDependencies": {
     "vwp": ">=0.0.33"
