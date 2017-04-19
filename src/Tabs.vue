@@ -1,19 +1,38 @@
 <template lang="pug">
 div.tabs-component
   .pure-g.tabs
-    router-link.decoration-none(:class='gridClass(tab)', v-for='tab in tabs', :to='tab.path', :key='tab.name')
-      .tab(:class="{'tab-label': tab.label}")
-        i(:class="tabIconClass(tab.icon)")
-        span(v-if='tab.label') {{ tab.label }}
+    router-link.decoration-none(:class='gridClass(tab)', v-for='tab in tabs', :to='tab.path', :key='tab.name', :exact='tab.exact')
+      .tab(:class="{'tab-label': tab.label}", :style='tabStyle')
+        .tab-content
+          i(:class="tabIconClass(tab.icon)")
+          span(v-if='tab.label') {{ tab.label }}
   slot
   router-view(style='margin-bottom: 40px;')
 </template>
 
 <script>
 export default {
+  props: {
+    backgroundColor: {
+      type: String,
+      default: '#E6E6E6'
+    },
+    color: {
+      type: String,
+      default: '#5295CF'
+    }
+  },
   data () {
     return {
       tabs: []
+    }
+  },
+  computed: {
+    tabStyle () {
+      return {
+        color: this.color,
+        backgroundColor: this.backgroundColor
+      }
     }
   },
   methods: {
@@ -42,21 +61,24 @@ export default {
     .decoration-none
       text-decoration none
     .tab
-      height 32px
+      height 40px
       padding 5px
-      background-color #E6E6E6
-      color #5295CF
-      border-top 2px solid transparent
+      &:not(.tab-label)
+        .tab-content
+          i
+            margin-top 5px
       &.tab-label
-        i
-          display block
-          font-size 85%
-        span
-          font-size 60%
-          display inline-block
-          white-space nowrap
+        .tab-content
+          i
+            display block !important
+            font-size 1.6em
+          span
+            font-size 0.6em
+            display inline-block
+            white-space nowrap
     .router-link-active
       .tab
-        color #306B9F
-        border-top 2px solid #306B9F
+        .tab-content
+          transition all 0.3s
+          filter invert(38%)
 </style>

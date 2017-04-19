@@ -16,7 +16,7 @@ yarn add v-tabs-router
 ### Usage in *.vue* template (Webpack)
 
 ```html
-<tabs>
+<tabs color='light-blue'>
   <tab name="home" path="/home" icon="fa fa-lg fa-home"></tab>
   <tab name="list" path="/list" icon="fa fa-lg fa-list" label="Tickets"></tab>
   <tab name="account" path="/account" icon="fa fa-lg fa-user"></tab>
@@ -35,12 +35,18 @@ export default {
 </script>
 ```
 
+Tabs properties
+
+ - **color:** *optional* - Tab icons colors
+ - **background-color:** *optional* - Tabs background
+
 Tab properties
 
  - **name:** *required* - Name of the tab. Needs be unique
  - **path:** *required* - Path to go when click
  - **icon:** *required* - Font icon to the tab, can be *font-awesome* or another font project. For example: 'fa fa-home'
  - **label:** *optional* - Label appears under the icon if present
+ - **exact:** *optional* - Only activate tab if the current route match exactly with the tab path
 
 Development
 -----------

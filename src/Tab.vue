@@ -2,14 +2,15 @@
 export default{
   render () { },
   props: {
-    'name': { type: String, required: true },
-    'path': { type: String, required: true },
-    'icon': { type: String, required: true, default: 'fa fa-2x fa-home'},
-    'label': { type: String }
+    name: { type: String, required: true },
+    path: { type: String, required: true },
+    icon: { type: String, required: true, default: 'fa fa-2x fa-home'},
+    label: { type: String },
+    exact: { type: Boolean, default: false } //https://jsfiddle.net/8xrk1n9f/
   },
   created () {
     let self = this
-    let tab = {name: this.name, path: this.path, icon: this.icon, label: this.label}
+    let tab = {name: this.name, path: this.path, icon: this.icon, label: this.label, exact: this.exact}
     this.$parent.$data.tabs.push(tab)
   }
 }
