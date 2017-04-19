@@ -300,14 +300,15 @@ exports.default = {
   render: function render() {},
 
   props: {
-    'name': { type: String, required: true },
-    'path': { type: String, required: true },
-    'icon': { type: String, required: true, default: 'fa fa-2x fa-home' },
-    'label': { type: String }
+    name: { type: String, required: true },
+    path: { type: String, required: true },
+    icon: { type: String, required: true, default: 'fa fa-2x fa-home' },
+    label: { type: String },
+    exact: { type: Boolean, default: false } //https://jsfiddle.net/8xrk1n9f/
   },
   created: function created() {
     var self = this;
-    var tab = { name: this.name, path: this.path, icon: this.icon, label: this.label };
+    var tab = { name: this.name, path: this.path, icon: this.icon, label: this.label, exact: this.exact };
     this.$parent.$data.tabs.push(tab);
   }
 };
@@ -333,20 +334,39 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
+  props: {
+    backgroundColor: {
+      type: String,
+      default: '#E6E6E6'
+    },
+    color: {
+      type: String,
+      default: '#5295CF'
+    }
+  },
   data: function data() {
     return {
       tabs: []
     };
   },
 
-  methods: {
-    gridClass: function gridClass(tab) {
-      var classes = {};
-      classes["pure-u-1-" + this.tabs.length] = true;
-      return classes;
+  computed: {
+    tabStyle: function tabStyle() {
+      return {
+        color: this.color,
+        backgroundColor: this.backgroundColor
+      };
     },
+    columnWidth: function columnWidth() {
+      return {
+        width: (100 / this.tabs.length).toFixed(4) + '%'
+      };
+    }
+  },
+  methods: {
     tabIconClass: function tabIconClass(icon) {
       var tmp = {};
       tmp[icon] = true;
@@ -363,26 +383,30 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "tabs-component"
   }, [_c('div', {
-    staticClass: "pure-g tabs"
+    staticClass: "tabs"
   }, _vm._l((_vm.tabs), function(tab) {
     return _c('router-link', {
       key: tab.name,
       staticClass: "decoration-none",
-      class: _vm.gridClass(tab),
+      style: (_vm.columnWidth),
       attrs: {
-        "to": tab.path
+        "to": tab.path,
+        "exact": tab.exact
       }
     }, [_c('div', {
       staticClass: "tab",
       class: {
         'tab-label': tab.label
-      }
+      },
+      style: (_vm.tabStyle)
+    }, [_c('div', {
+      staticClass: "tab-content"
     }, [_c('i', {
       class: _vm.tabIconClass(tab.icon)
-    }), (tab.label) ? _c('span', [_vm._v(_vm._s(tab.label))]) : _vm._e()])])
+    }), (tab.label) ? _c('span', [_vm._v(_vm._s(tab.label))]) : _vm._e()])])])
   })), _vm._t("default"), _c('router-view', {
     staticStyle: {
-      "margin-bottom": "40px"
+      "margin-bottom": "45px"
     }
   })], 2)
 },staticRenderFns: []}
