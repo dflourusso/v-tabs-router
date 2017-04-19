@@ -17,10 +17,10 @@ yarn add v-tabs-router
 
 ```html
 <tabs color='light-blue'>
-  <tab name="home" path="/home" icon="fa fa-lg fa-home"></tab>
-  <tab name="list" path="/list" icon="fa fa-lg fa-list" label="Tickets"></tab>
-  <tab name="account" path="/account" icon="fa fa-lg fa-user"></tab>
-  <tab name="about" path="/about" icon="fa fa-lg fa-exclamation"></tab>
+  <tab name="home" to="{name: 'home'}" icon="fa fa-lg fa-home"></tab>
+  <tab name="list" to="{name: 'list'}" icon="fa fa-lg fa-list" label="Tickets"></tab>
+  <tab name="account" to="{name: 'account'}" icon="fa fa-lg fa-user"></tab>
+  <tab name="about" to="{name: 'about'}" icon="fa fa-lg fa-exclamation"></tab>
 </tabs>
 <script>
 
@@ -43,7 +43,7 @@ Tabs properties
 Tab properties
 
  - **name:** *required* - Name of the tab. Needs be unique
- - **path:** *required* - Path to go when click
+ - **to:** *required* - Route to go when click
  - **icon:** *required* - Font icon to the tab, can be *font-awesome* or another font project. For example: 'fa fa-home'
  - **label:** *optional* - Label appears under the icon if present
  - **exact:** *optional* - Only activate tab if the current route match exactly with the tab path
